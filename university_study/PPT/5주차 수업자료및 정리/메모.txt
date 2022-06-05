@@ -1,0 +1,23 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+	char pBuffer[BUFSIZ];
+	int nLen = 0;
+
+	do
+	{
+		memset(pBuffer, 0, BUFSIZ);
+		nLen = read(0, pBuffer, BUFSIZ);
+		if (nLen > 0) {
+			printf("%s", pBuffer);
+		}
+		else
+			break;
+	} while (1);
+
+
+	return 0;
+}
